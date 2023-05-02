@@ -1,12 +1,12 @@
 import React from "react";
 import { FaThumbsUp } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
+import SingleRecipe from "../SingleRecipe/SingleRecipe";
 
 const ChefsRecipes = () => {
   const chef = useLoaderData();
-  const { name, picture, recipes, experience, likes, bio, recipes_list } = chef;
-
-  console.log(recipes_list);
+  const { id, name, picture, recipes, experience, likes, bio, recipes_list } =
+    chef;
 
   return (
     <>
@@ -34,19 +34,11 @@ const ChefsRecipes = () => {
             Signature Dish Recipes
           </legend>
         </fieldset>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20">
-          <div className="card card-compact bg-base-100 shadow-xl">
-            <figure>
-              <img className="w-full" src="" alt="dish" />
-            </figure>
-            <div className="card-body flex flex-col">
-              <h2 className="card-title font-bold">{recipes_list.name}</h2>
-              <div className="flex justify-between items-center mb-4">
-                <p className="text-base font-semibold">Experience: {} years</p>
-                <p className="text-end text-base font-semibold">Recipes: {}</p>
-              </div>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 mt-16 pb-10">
+          {recipes_list &&
+            recipes_list.map((recipe, index) => (
+              <SingleRecipe key={index} recipe={recipe}></SingleRecipe>
+            ))}
         </div>
       </div>
     </>

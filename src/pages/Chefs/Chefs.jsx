@@ -18,7 +18,7 @@ const Chefs = ({ chef }) => {
           </p>
           <p className="text-end text-base font-semibold">Recipes: {recipes}</p>
         </div>
-        <div className="flex justify-between items-center mt-auto">
+        <div className="flex justify-between items-center mt-auto text-red-400">
           <p className="flex gap-1 items-center text-lg font-semibold">
             <FaThumbsUp /> {likes}
           </p>
