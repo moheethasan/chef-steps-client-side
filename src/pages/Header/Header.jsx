@@ -3,7 +3,7 @@ import banner from "../../assets/banner.jpg";
 
 const Header = () => {
   return (
-    <div className="relative">
+    <header className="relative">
       <img className="w-full" src={banner} alt="" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2 md:mb-5 font-bold text-gray-800">
@@ -15,7 +15,7 @@ const Header = () => {
         </h3>
         <button className="btn-primary">Start Your Free Trial</button>
       </div>
-    </div>
+    </header>
   );
 };
 
