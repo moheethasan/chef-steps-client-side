@@ -1,13 +1,15 @@
 import React from "react";
+import NavigationBar from "../pages/NavigationBar/NavigationBar";
+import { Outlet } from "react-router-dom";
+import Footer from "../pages/Footer/Footer";
 
 const Main = () => {
   return (
-    <div>
-      <nav></nav>
-      <header></header>
-      {/* outlet home */}
-      <footer></footer>
-    </div>
+    <>
+      <NavigationBar></NavigationBar>
+      <Outlet></Outlet>
+      <Footer></Footer>
+    </>
   );
 };
 
