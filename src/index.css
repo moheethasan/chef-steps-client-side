@@ -11,9 +11,9 @@
 }
 
 .btn-primary {
-  @apply font-medium  transition duration-200  shadow-md  md:mb-0  px-4 py-2 md:px-8 md:py-3 text-base md:text-lg rounded-lg text-white hover:bg-red-500 bg-red-400 border-2 border-red-400 hover:border-red-500;
+  @apply font-medium  transition duration-200  shadow-md md:mb-0  px-4 py-2 md:px-8 md:py-3 text-base md:text-lg rounded-lg text-white hover:bg-red-500 bg-red-400 border-2 border-red-400 hover:border-red-500;
 }
 
 .btn-outlined {
-  @apply font-medium  transition duration-200  shadow-md  md:mb-0  px-4 py-2 md:px-8 md:py-3 text-base md:text-lg rounded-lg text-gray-500 hover:bg-red-500 hover:border-transparent border-2 border-red-400 hover:text-white;
+  @apply font-medium transition duration-200  shadow-md px-3 py-2 text-base md:text-lg rounded-lg text-red-500 hover:bg-red-500 hover:border-transparent border-2 border-red-400 hover:text-white;
 }

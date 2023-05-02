@@ -12,15 +12,21 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setChefs(data));
   }, []);
-  console.log(chefs);
 
   return (
     <>
       <Header></Header>
-      <div className="">
-        {chefs.map((chef) => (
-          <Chefs key={chef.id} chef={chef}></Chefs>
-        ))}
+      <div className="container mx-auto px-2 pt-14 pb-5 md:py-20">
+        <fieldset className="border-t border-gray-400">
+          <legend className="mx-auto px-4 text-gray-800 text-3xl md:text-4xl xl:text-5xl font-semibold">
+            Our Professional Chefs
+          </legend>
+        </fieldset>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-10 mt-10 md:mt-20">
+          {chefs.map((chef) => (
+            <Chefs key={chef.id} chef={chef}></Chefs>
+          ))}
+        </div>
       </div>
       <NewestRecipes></NewestRecipes>
       <ClientsReview></ClientsReview>

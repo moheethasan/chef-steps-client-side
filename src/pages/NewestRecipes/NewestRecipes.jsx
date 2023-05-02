@@ -6,7 +6,7 @@ import shawarma from "../../assets/shawarma.jpg";
 
 const NewestRecipes = () => {
   return (
-    <div className="px-2 mt-20 py-14 md:py-20">
+    <div className="px-2 pt-14 pb-5 md:py-20">
       <div className="container mx-auto">
         <fieldset className="border-t border-gray-400">
           <legend className="mx-auto px-4 text-gray-800 text-3xl md:text-4xl xl:text-5xl font-semibold">
