@@ -27,7 +27,7 @@ const Register = () => {
         .then((result) => {
           const createdUser = result.user;
           console.log(createdUser);
-          if (name && photo) {
+          if (name || photo) {
             editProfile(name, photo)
               .then(() => {
                 toast.success("User profile updated");
@@ -42,7 +42,7 @@ const Register = () => {
         })
         .catch((error) => {
           console.log(error);
-          setError(error.message);
+          setError(error.code.replace("auth/", ""));
         });
     }
   };

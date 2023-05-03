@@ -29,7 +29,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        setError(error.code);
+        setError(error.code.replace("auth/", ""));
       });
   };
 
@@ -72,6 +72,7 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Enter your email address"
+              required
               className="input input-bordered border-2"
             />
           </div>
@@ -83,6 +84,7 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Enter your password"
+              required
               className="input input-bordered border-2"
             />
           </div>

@@ -31,10 +31,13 @@ const NavigationBar = () => {
           </NavLink>
         </div>
         {user ? (
-          <div className="flex gap-3">
-            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+          <div className="flex gap-1 md:gap-3">
+            <div
+              className="tooltip tooltip-bottom"
+              data-tip={user.displayName ? user.displayName : "name not found"}
+            >
               <img
-                className="w-14 rounded-full"
+                className="w-10 md:w-14 rounded-full"
                 src={user.photoURL}
                 alt="user photo"
               />
