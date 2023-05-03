@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/logo.png";
 
 const NavigationBar = () => {
@@ -21,7 +21,9 @@ const NavigationBar = () => {
             Blog
           </NavLink>
         </div>
-        <button className="btn-primary">Login</button>
+        <Link to="/login" className="btn-primary">
+          Login
+        </Link>
       </div>
     </nav>
   );
