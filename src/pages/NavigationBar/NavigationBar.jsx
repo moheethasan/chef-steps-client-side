@@ -4,8 +4,13 @@ import logo from "../../../public/logo.png";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const NavigationBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   console.log(user);
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
 
   return (
     <nav className="bg-red-50 px-2 py-4">
@@ -26,8 +31,15 @@ const NavigationBar = () => {
           </NavLink>
         </div>
         {user ? (
-          <div className="w-24 rounded-full">
-            <img src={user.photoURL} alt="user photo" />
+          <div className="flex gap-3">
+            <img
+              className="w-14 rounded-full"
+              src={user.photoURL}
+              alt="user photo"
+            />
+            <button onClick={handleLogout} className="btn-primary">
+              Logout
+            </button>
           </div>
         ) : (
           <Link to="/login" className="btn-primary">

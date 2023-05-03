@@ -1,13 +1,61 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState("");
+
+  const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+
+  // email password login
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+      })
+      .catch((error) => {
+        setError(error.code);
+      });
+  };
+
+  // google login
+  const handleGoogleLogin = () => {
+    googleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  // github login
+  const handleGithubLogin = () => {
+    githubSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="hero mt-20">
       <div className="card w-full max-w-md shadow-2xl bg-base-100">
-        <form className="card-body">
+        <form onSubmit={handleLogin} className="card-body">
           <h1 className="text-4xl text-center font-bold pt-5 pb-8">Login</h1>
           <div className="form-control">
             <label className="label">
@@ -32,6 +80,9 @@ const Login = () => {
             />
           </div>
           <div className="form-control mt-3">
+            <span className="label-text font-semibold text-error mb-2">
+              {error}
+            </span>
             <input className="btn-primary" type="submit" value="Login" />
             <label className="label flex justify-center">
               <span className="label-text font-semibold">
@@ -52,12 +103,12 @@ const Login = () => {
               </legend>
             </fieldset>
           </div>
-          <div className="form-control">
+          <div onClick={handleGoogleLogin} className="form-control">
             <span className="flex justify-center items-center gap-1 bg-white text-black border-2 btn hover:bg-blue-500 hover:text-white hover:border-0">
               <FcGoogle className="text-2xl" /> Continue with Google
             </span>
           </div>
-          <div className="form-control">
+          <div onClick={handleGithubLogin} className="form-control">
             <span className="flex justify-center items-center gap-1 bg-white text-black border-2 btn  hover:text-white hover:border-0">
               <FaGithub className="text-2xl" /> Continue with Github
             </span>
