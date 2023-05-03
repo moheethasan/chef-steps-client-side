@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/logo.png";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const NavigationBar = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+
   return (
     <nav className="bg-red-50 px-2 py-4">
       <div className="flex justify-between items-center">
@@ -21,9 +25,15 @@ const NavigationBar = () => {
             Blog
           </NavLink>
         </div>
-        <Link to="/login" className="btn-primary">
-          Login
-        </Link>
+        {user ? (
+          <div className="w-24 rounded-full">
+            <img src={user.photoURL} alt="user photo" />
+          </div>
+        ) : (
+          <Link to="/login" className="btn-primary">
+            Login
+          </Link>
+        )}
       </div>
     </nav>
   );

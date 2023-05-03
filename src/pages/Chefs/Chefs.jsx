@@ -18,9 +18,9 @@ const Chefs = ({ chef }) => {
           </p>
           <p className="text-end text-base font-semibold">Recipes: {recipes}</p>
         </div>
-        <div className="flex justify-between items-center mt-auto text-red-400">
-          <p className="flex gap-1 items-center text-lg font-semibold">
-            <FaThumbsUp /> {likes}
+        <div className="flex justify-between items-center mt-auto">
+          <p className="flex gap-1 items-center text-base font-semibold">
+            Likes: <FaThumbsUp className="text-blue-500" /> {likes}
           </p>
           <Link to={`/chefs/${id}`} className="btn-outlined">
             View Recipes
