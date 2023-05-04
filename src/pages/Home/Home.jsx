@@ -6,11 +6,17 @@ import Chefs from "../Chefs/Chefs";
 
 const Home = () => {
   const [chefs, setChefs] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/chefs")
-      .then((res) => res.json())
-      .then((data) => setChefs(data));
+    setLoading(true);
+    const fetchData = async () => {
+      const res = await fetch("http://localhost:5000/chefs");
+      const data = await res.json();
+      setChefs(data);
+      setLoading(false);
+    };
+    fetchData();
   }, []);
 
   return (
@@ -22,7 +28,14 @@ const Home = () => {
             Our Professional Chefs
           </legend>
         </fieldset>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-10 mt-10 md:mt-20">
+        {loading ? (
+          <div className="text-center mt-20 z-10">
+            <button className="btn loading">loading</button>
+          </div>
+        ) : (
+          ""
+        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-10 mt-10 md:mt-20">
           {chefs &&
             chefs.map((chef) => <Chefs key={chef.id} chef={chef}></Chefs>)}
         </div>
