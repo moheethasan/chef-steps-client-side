@@ -21,12 +21,12 @@ const SingleRecipe = ({ recipe }) => {
       </figure>
       <div className="card-body flex flex-col">
         <h2 className="card-title font-bold">{name}</h2>
-        <p className="text-base mb-2">
+        <h6 className="text-base mb-2">
           <b>Ingredients:</b> {ingredients}
-        </p>
-        <p className="text-base">
+        </h6>
+        <h6 className="text-base">
           <b>Cooking Method:</b> {method}
-        </p>
+        </h6>
         <div className="flex justify-between items-center mt-auto">
           <span className="flex items-center text-lg font-semibold">
             <Rating style={{ maxWidth: 130 }} value={rating} readOnly />{" "}

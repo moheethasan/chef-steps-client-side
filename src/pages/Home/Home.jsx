@@ -11,7 +11,9 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      const res = await fetch("http://localhost:5000/chefs");
+      const res = await fetch(
+        "https://chef-recipe-hunter-server-moheethasan.vercel.app/chefs"
+      );
       const data = await res.json();
       setChefs(data);
       setLoading(false);
