@@ -13,7 +13,7 @@ const NewestRecipes = () => {
             Our Newest Recipes
           </legend>
         </fieldset>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-10 mt-10 md:mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 md:gap-10 mt-10 md:mt-20">
           <div className="card bg-base-100 shadow-xl">
             <figure>
               <img src={pasta} alt="pasta" />

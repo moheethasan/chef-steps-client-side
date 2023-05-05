@@ -9,7 +9,7 @@ const Chefs = ({ chef }) => {
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure>
-        <LazyLoad height={400} width={500} threshold={0.7}>
+        <LazyLoad height={300} width={500} threshold={0.7}>
           <img className="w-full rounded-t-2xl" src={picture} alt="chef" />
         </LazyLoad>
       </figure>

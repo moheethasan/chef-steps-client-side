@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/logo.png";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 
 const NavigationBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -31,16 +32,20 @@ const NavigationBar = () => {
           </NavLink>
         </div>
         {user ? (
-          <div className="flex gap-1 md:gap-3">
+          <div className="flex gap-1 md:gap-3 items-center">
             <div
               className="tooltip tooltip-bottom"
               data-tip={user.displayName ? user.displayName : "name not found"}
             >
-              <img
-                className="w-10 md:w-14 rounded-full"
-                src={user.photoURL}
-                alt="user photo"
-              />
+              {user.photoURL ? (
+                <img
+                  className="w-10 md:w-14 rounded-full"
+                  src={user.photoURL}
+                  alt="user photo"
+                />
+              ) : (
+                <FaUserCircle className="text-4xl" />
+              )}
             </div>
             <button onClick={handleLogout} className="btn-primary">
               Logout

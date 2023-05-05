@@ -13,19 +13,19 @@ const ChefsRecipes = () => {
       <div className="bg-red-50 py-14 md:py-20">
         <div className="container mx-auto flex flex-col-reverse md:flex-row justify-center items-center gap-10 md:gap-20 px-2">
           <div className="md:w-2/6">
-            <h2 className="text-5xl font-semibold mb-4">{name}</h2>
-            <p className="text-lg mb-2">{bio}</p>
+            <h2 className="text-5xl font-semibold mb-8">{name}</h2>
+            <p className="text-lg mb-6">{bio}</p>
             <div className="flex justify-between items-center">
               <p className="text-lg font-medium">
-                Experience: {experience} years
+                {experience} years of experience
               </p>
-              <p className="text-lg font-medium">Recipes: {recipes}</p>
+              <p className="text-lg font-medium">{recipes} different recipes</p>
             </div>
             <p className="flex text-lg gap-2 items-center font-semibold justify-center md:justify-start mt-5">
-              Likes: <FaThumbsUp className="text-blue-500" /> {likes}
+              <FaThumbsUp className="text-error" /> {likes} Likes
             </p>
           </div>
-          <img className="rounded-full md:w-2/6" src={picture} alt="" />
+          <img className="rounded-lg" src={picture} alt="" />
         </div>
       </div>
       <div className="container mx-auto mt-20 px-2">
