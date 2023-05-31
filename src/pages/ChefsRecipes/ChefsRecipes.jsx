@@ -11,8 +11,8 @@ const ChefsRecipes = () => {
   return (
     <>
       <div className="bg-red-50 py-14 md:py-20">
-        <div className="container mx-auto flex flex-col-reverse md:flex-row justify-center items-center gap-10 md:gap-20 px-2">
-          <div className="md:w-2/6">
+        <div className="container mx-auto flex flex-col-reverse lg:flex-row justify-center items-center gap-10 md:gap-20 px-4">
+          <div className="lg:w-2/6">
             <h2 className="text-5xl font-semibold mb-8">{name}</h2>
             <p className="text-lg mb-6">{bio}</p>
             <div className="flex justify-between items-center">
@@ -25,10 +25,10 @@ const ChefsRecipes = () => {
               <FaThumbsUp className="text-error" /> {likes} Likes
             </p>
           </div>
-          <img className="rounded-lg" src={picture} alt="" />
+          <img className="rounded-lg" src={picture} alt="chef" />
         </div>
       </div>
-      <div className="container mx-auto mt-20 px-2">
+      <div className="container mx-auto mt-20 px-4">
         <fieldset className="border-t border-gray-400">
           <legend className="mx-auto px-4 text-gray-800 text-3xl md:text-4xl font-semibold">
             Signature Dish Recipes

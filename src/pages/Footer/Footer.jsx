@@ -5,7 +5,7 @@ import { FaPaperPlane } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-red-50 mt-20 pt-20 pb-10 px-2">
+    <footer className="bg-red-50 mt-20 pt-20 pb-10 px-4">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0">
         <div className="">
           <img className="w-32 mb-3" src={logo} alt="logo" />

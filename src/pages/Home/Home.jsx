@@ -24,7 +24,7 @@ const Home = () => {
   return (
     <>
       <Header></Header>
-      <div className="container mx-auto px-2 pt-14 pb-5 md:py-20">
+      <div className="container mx-auto px-4 pt-14 pb-5 md:py-20">
         <fieldset className="border-t border-gray-400">
           <legend className="mx-auto px-4 text-gray-800 text-3xl md:text-4xl xl:text-5xl font-semibold">
             Our Professional Chefs
